@@ -3,9 +3,16 @@ package iv_properties
 import util.TODO
 import util.doc32
 
-class PropertyExample() {
+class PropertyExample {
+    private var _propertyWithCounter: Int? = null
+
     var counter = 0
-    var propertyWithCounter: Int? = todoTask32()
+    var propertyWithCounter: Int?
+        get() = _propertyWithCounter
+        set(value) {
+            counter++
+            _propertyWithCounter = value
+        }
 }
 
 fun todoTask32(): Nothing = TODO(
